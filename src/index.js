@@ -4,10 +4,15 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { getAllUsers } from './features/users/userSlice'
+import { getAllPosts } from './features/posts/postSlice'
 import './index.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
+
+store.dispatch(getAllUsers());
+store.dispatch(getAllPosts());
 
 root.render(
   <React.StrictMode>
